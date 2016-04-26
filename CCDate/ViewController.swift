@@ -10,6 +10,9 @@ import Cocoa
 
 class ViewController: NSViewController , NSWindowDelegate {
 
+    @IBOutlet weak var changeModeficationDate: NSButtonCell!
+    @IBOutlet weak var draggableView: DraggableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,12 +32,21 @@ class ViewController: NSViewController , NSWindowDelegate {
         self.view.registerForDraggedTypes(array as! [String])
         
         self.view.window?.delegate = self
+        
+        self.ModeficationChanged(changeModeficationDate)
 
     }
 
     func windowWillClose(aNotification : NSNotification){
         // Windowが閉じたらアプリを終了するようにする
         NSApp.terminate(self)
+    }
+    @IBAction func ModeficationChanged(sender: NSButtonCell) {
+        if (changeModeficationDate.state == 1){
+            draggableView.changeModificationDate = true
+        }else{
+            draggableView.changeModificationDate = false
+        }
     }
 }
 

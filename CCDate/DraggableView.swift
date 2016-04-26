@@ -9,6 +9,8 @@
 import Cocoa
 
 class DraggableView: NSView {
+    
+    public var changeModificationDate:Bool = false
 
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
@@ -63,7 +65,12 @@ class DraggableView: NSView {
                         
             let newCreateDate = createDate.dateByAddingTimeInterval(60 * 60 * 9)
             
-            let newAtt: Dictionary = [NSFileCreationDate: newCreateDate]
+            var newAtt: Dictionary = [NSFileCreationDate: newCreateDate]
+            if (changeModificationDate){
+                newAtt[NSFileModificationDate] = newCreateDate
+            }
+            
+            
             
             
             do {

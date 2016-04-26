@@ -670,7 +670,7 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="CCDate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="481" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jhV-k3-C79" customClass="DraggableView" customModule="CCDate" customModuleProvider="target">
@@ -684,14 +684,28 @@
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mks-hM-Vd6">
+                                        <rect key="frame" x="280" y="211" width="177" height="18"/>
+                                        <buttonCell key="cell" type="check" title="変更日も9時間すすめる" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Xri-xi-4PB">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="ModeficationChanged:" target="XfG-lQ-9wD" id="lBZ-Xo-2ta"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </customView>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="changeModeficationDate" destination="Xri-xi-4PB" id="pgl-qU-Vju"/>
+                        <outlet property="draggableView" destination="jhV-k3-C79" id="5aI-X0-cuc"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="660"/>
+            <point key="canvasLocation" x="74.5" y="660"/>
         </scene>
     </scenes>
 </document>
